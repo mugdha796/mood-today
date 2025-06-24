@@ -18,6 +18,11 @@
       cursor: pointer;
       border-radius: 6px;
     }
+    button.active {
+  background-color: #222;
+  color: white;
+  transform: scale(1.05);
+}
   </style>
 </head>
 <body>
@@ -35,6 +40,12 @@
     function setMood(mood) {
       const body = document.body;
       const msg = document.getElementById("message");
+    // Clear all active buttons
+    document.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+
+    // Add active class to clicked button
+    btn.classList.add("active");
+      
       if (mood === 'happy') {
         body.style.background = '#FFE066';
         msg.textContent = "Spread the joy! 😊";
