@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Mood Today</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 80px;
+      transition: background 0.5s;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>How are you feeling today?</h1>
+  <div>
+    <button onclick="setMood('happy')">😊 Happy</button>
+    <button onclick="setMood('sad')">😢 Sad</button>
+    <button onclick="setMood('chill')">😎 Chill</button>
+    <button onclick="setMood('angry')">😠 Angry</button>
+  </div>
+
+  <h2 id="message"></h2>
+
+  <script>
+    function setMood(mood) {
+      const body = document.body;
+      const msg = document.getElementById("message");
+      if (mood === 'happy') {
+        body.style.background = '#FFE066';
+        msg.textContent = "Spread the joy! 😊";
+      } else if (mood === 'sad') {
+        body.style.background = '#A0C4FF';
+        msg.textContent = "It's okay to be sad sometimes 💙";
+      } else if (mood === 'chill') {
+        body.style.background = '#D0F4DE';
+        msg.textContent = "Just vibin' 😌";
+      } else if (mood === 'angry') {
+        body.style.background = '#FF6B6B';
+        msg.textContent = "Take a breath 😤";
+      }
+    }
+  </script>
+</body>
+</html>
